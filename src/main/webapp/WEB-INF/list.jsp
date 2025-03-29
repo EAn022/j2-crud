@@ -11,7 +11,7 @@
 <body>
     <h1>Lista de Generos</h1>
     <c:forEach var="item" items="${generos}">
-        <p>teste de acesso da variavel "generos": ${generos}</p>
+        <p>teste de acesso da variavel "generos": ${item}</p>
     </c:forEach>
 </body>
 </html>
