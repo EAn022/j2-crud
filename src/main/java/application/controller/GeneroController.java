@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import application.repository.GeneroRepository;
 
 @Controller
-@RequestMapping(value = "/genero")
+@RequestMapping(value = "/generos")
 public class GeneroController {
     
     @Autowired
@@ -16,7 +16,7 @@ public class GeneroController {
 
     @RequestMapping(value = "/list")
     public String select(Model ui){
-        ui.addAttribute("generos", "100");
+        ui.addAttribute("generos", generoRepository.findAll());
         
         return "list";
     }
