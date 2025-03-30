@@ -9,10 +9,11 @@
     <title>Generos</title>
 </head>
 <body>
-    <h1>Lista de Generos</h1>
-    <p>teste de acesso da variavel "generos":</p>
-    <c:forEach var="item" items="${generos}">
-        <p>${item.nome}</p>
-    </c:forEach>
+    <h1>Novo genero</h1>
+    <form action="/generos/insert" method="post">
+        <label for="genero"></label>
+        <input type="text" name="generoNome">
+        <button type="submit">SALVAR</button>
+    </form>
 </body>
 </html>
