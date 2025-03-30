@@ -10,6 +10,7 @@
 </head>
 <body>
     <h1>Lista de Generos</h1>
+
     <p>teste de acesso da variavel "generos":</p>
     <c:forEach var="item" items="${generos}">
         <p>${item.nome}</p>

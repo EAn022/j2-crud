@@ -51,6 +51,17 @@ public class GeneroController {
         }
 
         return "redirect:/generos/list";
-
     }
+
+    @RequestMapping(value ="/update", method=RequestMethod.POST)
+    public String update(@RequestParam("id") long id, @RequestParam("nome") String nome){
+        Optional <Genero> resultado = generoRepository.findById(id);
+        if(resultado.isPresent()){
+            resultado.get().setNome(nome);
+            generoRepository.save(resultado.get());
+        }
+        return "redirect:/generos/list";
+    }
+
+
 }

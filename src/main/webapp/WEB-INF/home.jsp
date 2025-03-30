@@ -7,5 +7,8 @@
     </head>
     <body>
         <h1>Olá Spring!!!</h1>
+        <a href="/generos/list">LISTA</a>
+        <a href="/generos/insert">INSERT</a>
+        <a href="/generos/update">UPDATE</a>
     </body>
 </html>

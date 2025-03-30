@@ -10,6 +10,7 @@
 </head>
 <body>
     <h1>Novo genero</h1>
+    
     <form action="/generos/insert" method="post">
         <label for="genero"></label>
         <input type="text" name="generoNome">
