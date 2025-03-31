@@ -63,5 +63,20 @@ public class GeneroController {
         return "redirect:/generos/list";
     }
 
+    @RequestMapping(value = "/delete")
+    public String delete(@RequestParam("id") long id, Model ui){
+        Optional <Genero> resultado = generoRepository.findById(id);
+        if (resultado.isPresent()) {
+            ui.addAttribute("genero", resultado.get());
+            return "/formDelete";
+        } 
+        return "redirect:/generos/list";
+    }
 
+    @RequestMapping(value="/delete", method=RequestMethod.POST)
+    public String delete(@RequestParam("id") long id){
+        generoRepository.deleteById(id);
+        
+        return "redirect:/generos/list";
+    }
 }
