@@ -13,13 +13,12 @@ import application.model.Genero;
 import application.repository.GeneroRepository;
 
 @Controller
-@RequestMapping(value = "/generos")
 public class GeneroController {
     
     @Autowired
     private GeneroRepository generoRepository;
 
-    @RequestMapping(value = "/list")
+    @RequestMapping(value = "/")
     public String select(Model ui){
         ui.addAttribute("generos", generoRepository.findAll());
         
@@ -38,7 +37,7 @@ public class GeneroController {
         
         generoRepository.save(genero);
 
-        return "redirect:/generos/insert";
+        return "redirect:/insert";
     }
 
     @RequestMapping(value = "/update")
@@ -50,7 +49,7 @@ public class GeneroController {
             return "/formUpdate";
         }
 
-        return "redirect:/generos/list";
+        return "redirect:/list";
     }
 
     @RequestMapping(value ="/update", method=RequestMethod.POST)
@@ -60,7 +59,7 @@ public class GeneroController {
             resultado.get().setNome(nome);
             generoRepository.save(resultado.get());
         }
-        return "redirect:/generos/list";
+        return "redirect:/list";
     }
 
     @RequestMapping(value = "/delete")
@@ -70,13 +69,13 @@ public class GeneroController {
             ui.addAttribute("genero", resultado.get());
             return "/formDelete";
         } 
-        return "redirect:/generos/list";
+        return "redirect:/list";
     }
 
     @RequestMapping(value="/delete", method=RequestMethod.POST)
     public String delete(@RequestParam("id") long id){
         generoRepository.deleteById(id);
         
-        return "redirect:/generos/list";
+        return "redirect:/list";
     }
 }

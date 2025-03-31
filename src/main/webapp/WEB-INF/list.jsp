@@ -7,13 +7,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generos</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 <body>
-    <h1>Lista de Generos</h1>
+    <h1>LISTAGEM DE GÊNEROS</h1>
 
-    <p>teste de acesso da variavel "generos":</p>
-    <c:forEach var="item" items="${generos}">
-        <p>${item.nome}</p>
-    </c:forEach>
+    <section class="generos">
+        <ul>
+            <c:forEach var="item" items="${generos}">
+                <li>${item.nome}  <span><a href="/update?id=${item.id}">|Editar</a><a href="/delete?id=${item.id}">|Excluír</a></span> </li>
+            </c:forEach>
+        </ul>
+    </section>
 </body>
 </html>
