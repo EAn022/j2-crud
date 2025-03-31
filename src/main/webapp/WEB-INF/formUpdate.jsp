@@ -6,11 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generos</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 <body>
     <h1>Atualização de genero</h1>
    
-    <form action="/generos/update" method="post">
+    <form action="/update" method="post">
         <label for="id">id</label>
         <input type="number" name="id" value="${genero.id}" readonly>
         <label for="nome">nome</label>

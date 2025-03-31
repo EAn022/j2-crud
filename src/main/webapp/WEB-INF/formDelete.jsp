@@ -6,11 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 <body>
     <h1>Deletar genero</h1>
 
-    <form action="/generos/delete" method="post">
+    <form action="/delete" method="post">
         <label for="id">id</label>
         <input type="text" name="id" value="${genero.id}" readonly>
         <label for="nome">nome</label>

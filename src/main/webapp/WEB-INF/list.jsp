@@ -10,14 +10,23 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 <body>
-    <h1>LISTAGEM DE GÊNEROS</h1>
-
+    <section class="cabecalho">
+        <h1>LISTAGEM DE GÊNEROS</h1>
+        <nav class="navbar">
+            <h2>Gêneros:</h2>
+            <a class="btn-adicionar" href="/insert">+</a>
+        </nav>
+    </section>
     <section class="generos">
-        <ul>
-            <c:forEach var="item" items="${generos}">
-                <li>${item.nome}  <span><a href="/update?id=${item.id}">|Editar</a><a href="/delete?id=${item.id}">|Excluír</a></span> </li>
-            </c:forEach>
-        </ul>
+        <c:forEach var="item" items="${generos}">
+            <div class="card-item">
+                <span>${item.nome}</span>  
+                
+                <div class="controles">
+                    <span><a href="/update?id=${item.id}">|Editar</a><a href="/delete?id=${item.id}">|Excluír</a></span> 
+                </div>
+            </div>   
+        </c:forEach>
     </section>
 </body>
 </html>
