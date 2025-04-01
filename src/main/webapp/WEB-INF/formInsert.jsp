@@ -19,9 +19,9 @@
             </section>
             <section class="form">
                 <form action="/insert" method="post">
-                    <label for="genero"></label>
+                    <label for="genero">Nome</label>
                     <input type="text" name="generoNome">
-                    <button type="submit">SALVAR</button>
+                    <button class="btn-salvar" type="submit">SALVAR</button>
                 </form>
             </section>
         </div>

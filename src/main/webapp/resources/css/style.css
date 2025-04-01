@@ -1,7 +1,8 @@
 :root{
     --background-card: rgb(240, 240, 240);
     --background-button-insert: rgb(106, 158, 255);
-    --background-button-navegar: rgb(185, 185, 185);
+    --background-button-naveg: rgb(136, 136, 136);
+    --background-button-delete: rgb(255, 0, 0);
     --shadow: rgb(161, 161, 161);
 
 }
@@ -15,6 +16,31 @@ body{
     height: 100vh;
 }
 
+h1{
+    font-size: 1.5em;
+}
+
+a{
+    text-decoration: none;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+input{
+    width:60%;
+    height: 26px;
+    border-radius: 5px;
+    border:none;
+    padding: 0 5px;
+    margin-top: 6px;
+    margin-bottom: 12px;
+}
+
 .card-item{
     display: flex;
     background-color: var(--background-card);
@@ -25,9 +51,6 @@ body{
     box-shadow: 2px 2px 6px var(--shadow);
 }
 
-a{
-    text-decoration: none;
-}
 
 .navbar{
     display: flex;
@@ -60,14 +83,16 @@ a{
     background-color: var(--background-card);
     height: 300px;
     width: 100%;
-    padding:60px;
+    padding:6%;
     border-radius:20px;
     box-shadow: 2px 2px 6px var(--shadow);
+    position: relative;
 }
 
 .btn-navegar{
-    color: var(--background-button-insert);
-    border: solid 1px var(--background-button-insert);
+    color: var(--background-button-naveg);
+    border: solid 1px var(--background-button-naveg);
+    background-color: white;
     border-radius: 8px;
     font-size: 12px;
     font-weight: 300;
@@ -75,9 +100,19 @@ a{
     padding: 5px 10px; 
 }
 
-input{
-    width:80%;
-    border-radius: 8px;
-    border:none;
-    
+
+.btn-salvar{
+    border: none;
+    background-color: var(--background-button-insert);
+    color:white;
+    border-radius: 5px;
+    padding: 6px;
+    position:absolute;
+    right: 6%;
+    cursor:pointer;
+    margin-top: 22px;
+}
+
+.btn-excluir{
+    background-color: var(--background-button-delete);
 }
