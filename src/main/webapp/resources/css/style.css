@@ -66,11 +66,18 @@ a{
 }
 
 .btn-navegar{
-    background-color: var(--background-button-navegar);
+    color: var(--background-button-insert);
+    border: solid 1px var(--background-button-insert);
     border-radius: 8px;
-    
     font-size: 12px;
     font-weight: 300;
     text-align: center;
     padding: 5px 10px; 
+}
+
+input{
+    width:80%;
+    border-radius: 8px;
+    border:none;
+    
 }
