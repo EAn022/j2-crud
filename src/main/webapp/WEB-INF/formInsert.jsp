@@ -20,8 +20,10 @@
             <section class="form">
                 <form action="/insert" method="post">
                     <label for="genero">Nome</label>
-                    <input type="text" name="generoNome">
+                    <input type="text" name="generoNome" autofocus>
+
                     <button class="btn-salvar" type="submit">SALVAR</button>
+
                 </form>
             </section>
         </div>

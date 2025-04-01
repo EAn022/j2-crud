@@ -25,7 +25,7 @@
                     <input type="number" name="id" value="${genero.id}" readonly>
                     
                     <label for="nome">nome</label>
-                    <input type="text" name="nome" value="${genero.nome}">
+                    <input type="text" name="nome" value="${genero.nome}" autofocus>
                     
                     <button class="btn-salvar" type="submit">SALVAR</button>
 
