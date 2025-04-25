@@ -22,12 +22,12 @@ public class GeneroController {
     public String select(Model ui){
         ui.addAttribute("generos", generoRepository.findAll());
         
-        return "list";
+        return "generos/list";
     }
 
     @RequestMapping(value = "/insert")
     public String insert(){
-        return "formInsert";
+        return "generos/formInsert";
     }
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
@@ -46,7 +46,7 @@ public class GeneroController {
         if(resultado.isPresent()){
             ui.addAttribute("genero", resultado.get() );
            
-            return "/formUpdate";
+            return "generos/formUpdate";
         }
 
         return "redirect:/";
@@ -67,7 +67,7 @@ public class GeneroController {
         Optional <Genero> resultado = generoRepository.findById(id);
         if (resultado.isPresent()) {
             ui.addAttribute("genero", resultado.get());
-            return "/formDelete";
+            return "generos/formDelete";
         } 
         return "redirect:/";
     }
