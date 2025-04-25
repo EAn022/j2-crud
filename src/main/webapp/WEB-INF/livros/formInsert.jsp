@@ -11,7 +11,7 @@
 </head>
 <body>
     <h1>Novo livro</h1>
-    <form action="/livros/insert">
+    <form action="/livros/insert" method="post">
         <div>
             <label for="titulo">Título do livros</label>
             <input type="text" name="titulo">
@@ -23,10 +23,8 @@
                     <option value="${genero.id}">${genero.nome}</option>
                 </c:forEach>
             </select>
+            <button type="submit">Salvar</button>
         </div>
-
-        
-        
     </form>
 </body>
 </html>

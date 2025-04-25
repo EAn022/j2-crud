@@ -15,6 +15,7 @@
         <nav class="navbar">
             <h2>Gêneros:</h2>
             <a class="btn-adicionar" href="/insert">+</a>
+            <a class="btn-adicionar" href="/livros/list">Livros</a>
         </nav>
     </section>
     <section class="generos">
