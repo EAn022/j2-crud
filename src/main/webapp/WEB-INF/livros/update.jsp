@@ -10,17 +10,18 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Novo livro</h1>
-    <form action="/livros/insert" method="post">
+    <h1>Editar livro</h1>
+    <form action="/livros/update" method="post">
+        <input type="hidden" name="id" value="${livro.id}">
         <div>
             <label for="titulo">Título do livros</label>
-            <input type="text" name="titulo">
+            <input type="text" name="titulo" value="${livro.titulo}">
         </div>
         <div>
             <label for="id_generos">Gêneros do livro</label>
             <select name="id_generos">
                 <c:forEach var="genero" items="${generos}">
-                    <option value="${genero.id}">${genero.nome}</option>
+                    <option ${(livro.genero.id == genero.id)? "selected" : ""} value="${genero.id}">${genero.nome}</option>
                 </c:forEach>
             </select>
             <button type="submit">Salvar</button>
@@ -29,7 +30,7 @@
             <label class="form-label" for="">Autores</label>
             <c:forEach var = "a" items = "${autores}">
                 <div class="form-check">
-                    <input type="checkbox" name="autores" value="${a.id}" class="form-check-input">
+                    <input ${(livro.autores.contains(a))? "checked" : ""} type="checkbox" name="autores" value="${a.id}" class="form-check-input">
                     <label for="" class="form-check-input">${a.nome}</label>
                 </div>
             </c:forEach>

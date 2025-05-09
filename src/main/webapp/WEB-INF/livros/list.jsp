@@ -18,13 +18,24 @@
                 <th>id</th>
                 <th>titulo</th>
                 <th>genero</th>
+                <th>autores</th>
+                <th>-</th>
             </tr>
             
             <c:forEach var="livro" items="${livros}">
                 <tr>
-                    <th>${livro.id}</th>
-                    <th>${livro.titulo}</th>
-                    <th>${livro.genero.nome}</th>
+                    <td>${livro.id}</td>
+                    <td>${livro.titulo}</td>
+                    <td>${livro.genero.nome}</td>
+                    <td>
+                        <c:forEach var = "a" items = "${livro.autores}">
+                            ${a.nome}
+                        </c:forEach>
+                    </td>
+                    <td>
+                        <a href="/livro/update/${livro.id}" class="btn btn-primary">Editar</a>
+                        <a href="/livro/delete/${livro.id}" class="btn btn-danger">remover</a>
+                    </td>
                 </tr>
             </c:forEach>
         </table>
