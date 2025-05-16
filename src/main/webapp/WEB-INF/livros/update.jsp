@@ -24,7 +24,6 @@
                     <option ${(livro.genero.id == genero.id)? "selected" : ""} value="${genero.id}">${genero.nome}</option>
                 </c:forEach>
             </select>
-            <button type="submit">Salvar</button>
         </div>
         <div>
             <label class="form-label" for="">Autores</label>
@@ -35,6 +34,7 @@
                 </div>
             </c:forEach>
         </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
     </form>
 </body>
 </html>

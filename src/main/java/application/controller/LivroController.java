@@ -71,7 +71,7 @@ public class LivroController {
         return "/livros/update";
     }
 
-    @RequestMapping(value = "/update", method = RequestMapping.POST)
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
     public String update(@RequestParam("id") long id, @RequestParam("titulo") String titulo, @RequestParam("id_genero") long id_genero, @RequestParam("id_autor") long[] ids_autores){
         Optional<Livro> result_l = livroRepo.findById(id);
         if (result_l.isPresent()) {
@@ -96,6 +96,23 @@ public class LivroController {
             }
         }
 
+        return "redirect:/livros/list";
+    }
+
+    @RequestMapping(value = "/delete/{id}")
+    public String delete(@PathVariable long id, Model ui){
+        Optional<Livro> resultado = livroRepo.findById(id);
+
+        if(resultado.isPresent()){
+            ui.addAttribute("livro", resultado.get());
+            return "/livros/delete";
+        }
+        return "redirect:/livros/formInsert";
+    }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public String delete(@RequestParam("id") long id) {
+        livroRepo.deleteById(id);
         return "redirect:/livros/list";
     }
 }
